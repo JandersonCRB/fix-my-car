@@ -9,10 +9,10 @@
           <ul class="nav navbar-nav">
             <li class="dropdown" style="font-weight:bold;"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="font-size:15px;">Serviços&nbsp;<span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li role="presentation"><a href="#" style="font-weight:bold;font-size:15px;">Motor</a></li>
-                <li role="presentation"><a href="#" style="font-weight:bold;font-size:15px;">Borracharia</a></li>
-                <li role="presentation"><a href="#" style="font-weight:bold;font-size:15px;">Elétrico</a></li>
-                <li role="presentation"><a href="#" style="font-weight:bold;font-size:15px;">Mais</a></li>
+                <li role="presentation"><a href="/help" style="font-weight:bold;font-size:15px;">Motor</a></li>
+                <li role="presentation"><a href="/help" style="font-weight:bold;font-size:15px;">Borracharia</a></li>
+                <li role="presentation"><a href="/help" style="font-weight:bold;font-size:15px;">Elétrico</a></li>
+                <li role="presentation"><a href="/" style="font-weight:bold;font-size:15px;">Mais</a></li>
               </ul>
             </li>
           </ul>
@@ -24,6 +24,7 @@
             <ul class="nav navbar-nav navbar-right">
               <li class="dropdown" style="font-weight:bold;"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="font-size:15px;">Configurações&nbsp;<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
+                  <li role="presentation"><%= link_to "Painel de controle", fixes_path, style: "font-weight:bold;font-size:15px;" %></li>
                   <li role="presentation"><%= link_to "Editar Perfil", edit_user_registration_path, style: "font-weight:bold;font-size:15px;" %></li>
                   <li role="presentation"><%= link_to "Sair", destroy_user_session_path, style: "font-weight:bold;font-size:15px;", method: :delete %></li>
                 </ul>

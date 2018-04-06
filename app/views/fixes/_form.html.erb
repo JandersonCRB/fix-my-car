@@ -1,4 +1,6 @@
-<%= form_with(model: fix, local: true) do |form| %>
+
+
+<%= form_with(model: fix, local: true, class: "form-inline") do |form| %>
   <% if fix.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(fix.errors.count, "error") %> prohibited this fix from being saved:</h2>
@@ -10,18 +12,15 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :latitude %>
-    <%= form.number_field :latitude, id: :fix_latitude, step: :any %>
+  <div class="col-md-12">
+    <div class="form-group">
+      <%= form.number_field :latitude, id: :fix_latitude, step: :any, style: "margin-bottom:8px;background-color:rgb(255,255,255);", placeholder: "Latitude", class:"form-control" %>
+      <%= form.number_field :longitude, id: :fix_longitude, step: :any, style: "margin-bottom:8px;background-color:rgb(255,255,255);", placeholder: "Latitude", class:"form-control" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :longitude %>
-    <%= form.number_field :longitude, id: :fix_longitude, step: :any %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="col-md-12">
+    <div class="form-group">
+      <%= form.submit "SOLICITAR", class: "btn btn-primary" %>
+    </div>
   </div>
 <% end %>
