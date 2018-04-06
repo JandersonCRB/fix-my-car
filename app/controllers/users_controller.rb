@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 	before_action :set_user
 	def show
+		@reviews = []
+		@reviews = @user.reviews if @user.mechanical
 	end
 
 	private

@@ -1,1 +1,19 @@
-<h1>Hi</h1>
+<div class="row">
+	<h1 class="mx-auto">Reviews</h1>
+</div>
+
+<div>
+	<div>
+		<p>Nome: <%= @user.name %></p>
+
+	</div>
+	<hr/>
+	<div>
+		<% @reviews.each do |review| %>
+			<p>Usuário: <%= review.owner.name %></p>
+			<p>Nota: <%= review.avaliation %></p>
+			<p>Comentário: <%= review.comment %></p>
+			<hr />
+		<% end %>
+	</div>
+</div>

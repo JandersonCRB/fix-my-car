@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
     @review.fix = Fix.find(params[:fix_id])
     respond_to do |format|
       if @review.save
-        format.html { redirect_to fix_reviews_url(@review), notice: 'Review registrado com sucesso! Obrigado por contribuir!' }
+        format.html { redirect_to profile_url(@review.fix.mechanical), notice: 'Review registrado com sucesso! Obrigado por contribuir!' }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new }
