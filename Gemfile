@@ -37,13 +37,14 @@ gem 'jquery-rails'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap-sass', '~> 3.3.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 gem 'pg'
 
 group :development, :test do
+  gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver

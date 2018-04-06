@@ -1,3 +1,23 @@
+<div class="register-photo" style="background-color:#f5f5f5;">
+  <div class="form-container">
+    <div class="image-holder" style="background-image:url(/assets/user.jpg);background-size:cover;height:500px;"></div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <h2 class="text-center"><strong>Entrar</strong>&nbsp;com uma conta.</h2>
+      <div class="form-group">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"E-mail", required: true, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password, autofocus: true, autocomplete: "off", placeholder:"Senha", required: true, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary btn-block" type="submit">Entrar</button>
+      </div>
+      <%= link_to "Você ainda não possui uma conta?<br />Registre-se aqui!".html_safe, new_user_registration_path, class: "already" %>
+    <% end %>
+  </div>
+</div>
+
+<!-- 
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -23,4 +43,4 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render "devise/shared/links" %> -->

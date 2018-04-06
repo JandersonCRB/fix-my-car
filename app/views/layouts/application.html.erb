@@ -3,15 +3,17 @@
   <head>
     <title>Hackaton</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   </head>
 
   <body>
     <%= render "shared/navbar" %>
-  	<div class="container">
-	    <%= yield %>
-  	</div>
+    <%= yield %>
+    <%= render "shared/footer" %>
   </body>
 </html>
