@@ -6,9 +6,17 @@
 .register-photo .image-holder {
   display:table-cell;
   width:auto;
-  background:url(../../assets/img/meeting.jpg);
+  background-image:image-url("mech.jpg");
   background-size:cover;
 }
+
+.register-photo .image-holder-ses {
+  display:table-cell;
+  width:auto;
+  background-image:image-url("user.jpg");
+  background-size:cover;
+}
+
 
 .register-photo .form-container {
   display:table;
