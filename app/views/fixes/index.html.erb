@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My Fixes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Requester</th>
+      <th>Mechanical</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Status</th>
+      <th>Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @myFixes.each do |fix| %>
+      <tr>
+        <td><%= fix.requester.email %></td>
+        <td><%= fix.mechanical.email if fix.mechanical.present? %></td>
+        <td><%= fix.latitude %></td>
+        <td><%= fix.longitude %></td>
+        <td><%= fix.status %></td>
+        <td><%= fix.time %></td>
+        <td><%= link_to 'Show', fix %></td>
+        <% if fix.requester == current_user %>
+          <td><%= link_to 'Destroy', fix, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h1>Waiting Fixes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Requester</th>
+      <th>Mechanical</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Status</th>
+      <th>Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @waitingFixes.each do |fix| %>
+      <tr>
+        <td><%= fix.requester.email %></td>
+        <td><%= fix.mechanical.email if fix.mechanical.present? %></td>
+        <td><%= fix.latitude %></td>
+        <td><%= fix.longitude %></td>
+        <td><%= fix.status %></td>
+        <td><%= fix.time %></td>
+        <td><%= link_to 'Show', fix %></td>
+        <% if fix.requester == current_user %>
+          <td><%= link_to 'Avaliar', new_fix_reviews_path(fix) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'New Fix', new_fix_path unless current_user&.mechanical %>

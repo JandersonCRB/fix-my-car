@@ -1,0 +1,27 @@
+<%= form_with(model: fix, local: true) do |form| %>
+  <% if fix.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fix.errors.count, "error") %> prohibited this fix from being saved:</h2>
+
+      <ul>
+      <% fix.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.number_field :latitude, id: :fix_latitude, step: :any %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.number_field :longitude, id: :fix_longitude, step: :any %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

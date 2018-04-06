@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Requester:</strong>
+  <%= @fix.requester.email %>
+</p>
+<% if @fix.mechanical.present? %>
+  <p>
+    <strong>Mechanical:</strong>
+    <%= @fix.mechanical.email %>
+  </p>
+<% end %>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @fix.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @fix.longitude %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @fix.status %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @fix.time %>
+</p>
+
+<% if current_user&.mechanical && @fix.status == 0 %>
+  <%= link_to 'Aceitar Pedido', attend_fix_path(@fix), method: :put %> <br/>
+<% end %>
+
+<% if !current_user&.mechanical && @fix.status == 1 %>
+  <%= link_to 'Marcar pedido como atendido', attend_fix_path(@fix), method: :put %> <br />
+<% end %>
+<%= link_to 'Back', fixes_path %>
